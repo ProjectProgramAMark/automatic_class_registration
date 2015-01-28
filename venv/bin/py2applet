@@ -1,0 +1,10 @@
+#!/Users/mark/Desktop/automatic_class_registration-master/venv/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'py2app==0.9','console_scripts','py2applet'
+__requires__ = 'py2app==0.9'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('py2app==0.9', 'console_scripts', 'py2applet')()
+    )

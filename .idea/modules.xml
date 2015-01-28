@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/automatic_class_registration.py.iml" filepath="$PROJECT_DIR$/.idea/automatic_class_registration.py.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/automatic_class_registration.iml" filepath="$PROJECT_DIR$/.idea/automatic_class_registration.iml" />
     </modules>
   </component>
 </project>

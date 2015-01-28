@@ -1,0 +1,5 @@
+#!/Users/mark/Desktop/automatic_class_registration-master/venv/bin/python3
+from cx_Freeze.setupwriter import main
+
+main()
+
