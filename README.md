@@ -2,4 +2,13 @@ Hi! This is my attempt at programming in general, much less using Git and Github
 
 You may find it hard to use the code because it is specific to a college-specific web app called “OASIS.” If that’s the case and you want to help me contribute, please feel free to contact me.
 
+Setup as a Python app:
+
+    1: Unzip file to somewhere you can find it
+    2: Open Terminal (bash)
+    3: Change into directory of project
+    4: Enter "source venv/bin/activate" (without the quotes) then hit enter/return
+    5: Enter "python setup.py py2app" (without the quotes)
+    6: The app should be found in the dist folder in the same directory. Have fun!
+
 Thanks in advance!!
