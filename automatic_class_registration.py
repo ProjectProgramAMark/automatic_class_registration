@@ -17,7 +17,6 @@ from apscheduler.executors.pool import ProcessPoolExecutor
 from lxml import html
 
 """MAKE QUIT BUTTON ON TIMER WINDOW DESTROY PROGRAM. INCLUDE CENTER PAUSE BUTTON THAT DOES WHAT QUIT DOES NOW"""
-
 first_time = True
 
 #setting the scheduler in order to use later in script
