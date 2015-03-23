@@ -48,11 +48,16 @@ def submit_crn(username, password, term, crn1):
     login_button = driver.find_element_by_xpath("/html/body/div/div[2]/div[2]/div[4]/a")
     login_button.click()
     wait
-    username_area = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/form/input[1]")
-    username_area.send_keys(username)
-    password_area = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/form/input[2]")
-    password_area.send_keys(password)
-    password_area.submit()
+    try:
+        username_area = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/form/input[1]")
+        username_area.send_keys(username)
+        password_area = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/form/input[2]")
+        password_area.send_keys(password)
+        password_area.submit()
+    except NoSuchElementException:
+        AutomaticClassRegistration.cannot_connect_to_oasis()
+
+
     #wait for code to process to make sure page is loaded
     wait
     #clicks on Student
@@ -145,6 +150,7 @@ def on_class_schedule_search_submission(semester, campus, subject, number):
     driver.get('http://www.registrar.usf.edu/ssearch/search.php')
     wait = WebDriverWait(driver, 20)
     WebDriverWait(driver, 20)
+
     #Sets variables, asks for which campus, if answer matches any one, then it selects proper option
     select_campus_choice = Select(driver.find_element_by_xpath(campus_xpath))
     #wait.until statements wait for computer to select element, in case there is an obstacle/slowdown in the way
@@ -385,6 +391,16 @@ wanted.")
         quit_button = Button(cannot_register_class, text="QUIT", command=cannot_register_class.destroy)
         message.pack()
         quit_button.pack(anchor=SE)
+
+    @staticmethod
+    def cannot_connect_to_oasis():
+        cannot_connect = Tk()
+        cannot_connect.title("Cannot Connect To Oasis")
+        message = Message(cannot_connect, text="It looks like there's a problem with the server at USF Oasis. Please \
+        try connecting again, it should work. If not, contact the developer.")
+        quit_button = Button(cannot_connect, text="QUIT", command=cannot_connect.destroy)
+        message.pack()
+        quit_button.pack()
 
     def timer_tk(self):
         failure_instance.withdraw()
